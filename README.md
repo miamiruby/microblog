@@ -31,3 +31,8 @@ python -m smtpd -n -c DebuggingServer localhost:8025
 pip freeze > requirements.txt
 pip freeze > requirements-dev.txt
 
+# generate .pot files
+pybabel extract -F babel.cfg -k _l -o messages.pot .
+
+#generate lanague catalog
+pybabel init -i messages.pot -d app/translations -l es
