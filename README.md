@@ -36,3 +36,9 @@ pybabel extract -F babel.cfg -k _l -o messages.pot .
 
 #generate lanague catalog
 pybabel init -i messages.pot -d app/translations -l es
+
+#translate 
+flask translate init <language-code>
+flask translate update
+flask translate compile
+
