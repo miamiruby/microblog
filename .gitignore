@@ -37,4 +37,4 @@ microblog.log*
 .vscode
 venv
 logs/*
-
+*.log
