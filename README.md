@@ -53,3 +53,10 @@ flask translate compile
 {u'hits': {u'hits': [{u'_score': 0.5753642, u'_type': u'my_index', u'_id': u'1', u'_source': {u'text': u'this is a test'}, u'_index': u'my_index'}, {u'_score': 0.2876821, u'_type': u'my_index', u'_id': u'2', u'_source': {u'text': u'a second test'}, u'_index': u'my_index'}], u'total': 2, u'max_score': 0.5753642}, u'_shards': {u'successful': 5, u'failed': 0, u'skipped': 0, u'total': 5}, u'took': 6, u'timed_out': False}
 >>> es.search()
 >>> es.indices.delete('my_index')
+
+
+(venv) $ git pull                              # download the new version
+(venv) $ sudo supervisorctl stop microblog     # stop the current server
+(venv) $ flask db upgrade                      # upgrade the database
+(venv) $ flask translate compile               # upgrade the translations
+(venv) $ sudo supervisorctl start microblog    # start a new server
